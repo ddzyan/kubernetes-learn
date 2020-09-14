@@ -10,7 +10,7 @@ k8s secret 操作示例
 $ kubectl create secret --help
 ```
 
-### 创建配置文件
+#### 创建配置文件
 
 ```shell
 $ kubectl create secret generic user --from-file=./file/username.txt
@@ -35,7 +35,7 @@ Data
 username.txt:  6 bytes
 ```
 
-### 创建 pod 并且使用上面的 secret
+#### 创建 pod 并且使用上面的 secret
 
 ```shell
 $ kubectl create -f ./file_config_pod.yaml
