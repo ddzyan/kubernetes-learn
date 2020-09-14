@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+      namespace: codebill
+    spec:
+      containers:
+        - name: myapp
+          image: codebill/myapp:v1.0.2
+          imagePullPolicy: IfNotPresent
+          livenessProbe: # 健康检测
+            httpGet:
+              path: /healthz
+              port: 3000
+            periodSeconds: 3
+            initialDelaySeconds: 10
+          readinessProbe: # 初始化检测
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 10
+          env:
+            - name: MY_NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: MY_POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          ports:
+            - containerPort: 3000
