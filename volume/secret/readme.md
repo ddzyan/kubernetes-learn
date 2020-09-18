@@ -2,7 +2,7 @@
 
 k8s secret 操作示例
 
-### 案例一 demo1
+### 案例一 demo1 命令式创建
 
 通过命令式直接创建 secret 对象，具体操作说明可以参考如下指令
 
@@ -52,7 +52,7 @@ $ kubectl exec test-projected-volume -- cat /projected-volume/password.txt
 admin
 ```
 
-### 案例二 demo2
+### 案例二 demo2 声明式创建
 
 #### 创建配置
 
