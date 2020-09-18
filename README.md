@@ -3,11 +3,14 @@
 记录在 kubernetes 学习过程中的 demo 案例和使用技巧
 
 - [ ] controller
-  - [ ] deployment
-  - [ ] statefulSet
+  - [x] [deployment](./controller/deployment)
+  - [x] [statefulSet](./controller/statefulSet)
 - [ ] pod
+  - [x] [livenessProbe](./pod/livenessProbe)
 - [ ] secret
-  - [ ] 命令式
-  - [ ] 声明式
+  - [x] [命令式](./secret/demo1)
+  - [x] [声明式](./secret/demo2)
 - [ ] volume
-  - [ ] hostPath
+  - [x] [hostPath](./volume/hostPath)
+  - [x] [emptyDir](./volume/emptyDir)
+- [ ] application
