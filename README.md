@@ -5,6 +5,9 @@
 - [ ] controller
   - [x] [deployment](./controller/deployment)
   - [x] [statefulSet](./controller/statefulSet)
+  - [x] job
+    - [x] [job](./controller/job/job)
+    - [x] [CronJob](./controller/job/CronJob)
 - [ ] pod
   - [x] [livenessProbe](./pod/livenessProbe)
 - [ ] secret
@@ -14,6 +17,3 @@
   - [x] [hostPath](./volume/hostPath)
   - [x] [emptyDir](./volume/emptyDir)
 - [ ] application
-- [x] job
-  - [x] [job](./job/job)
-  - [x] [CronJob](./job/CronJob)
