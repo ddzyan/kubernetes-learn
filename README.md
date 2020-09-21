@@ -5,7 +5,7 @@
 - [ ] controller
   - [x] [deployment](./controller/deployment)
   - [x] [statefulSet](./controller/statefulSet)
-  - [x] job
+  - [x] [job](./controller/job)
     - [x] [job](./controller/job/job)
     - [x] [CronJob](./controller/job/CronJob)
 - [ ] pod
