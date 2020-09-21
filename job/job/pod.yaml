@@ -3,12 +3,15 @@ kind: Job
 metadata:
   name: pi
 spec:
+  parallelism: 2 # 并发数为
+  completions: 4 # 完成任务数量为4
+  backoffLimit: 4 # 失败重试次数
+  activeDeadlineSeconds: 100 # 任务持续时间
+  ttlSecondsAfterFinished: 100 # 任务完成 100秒后，将会被自动删除
   template:
     metadata:
       name: pi
     spec:
-      parallelism: 2 # 并发数为
-      completions: 4 # 完成任务数量为4
       containers:
         - name: pi
           image: resouer/ubuntu-bc
@@ -17,4 +20,3 @@ spec:
             - '-c'
             - "echo 'scale=10000;4*a(1)' | bc -l"
       restartPolicy: Never
-  backoffLimit: 4

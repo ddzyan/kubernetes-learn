@@ -14,6 +14,6 @@
   - [x] [hostPath](./volume/hostPath)
   - [x] [emptyDir](./volume/emptyDir)
 - [ ] application
-- [ ] job
+- [x] job
   - [x] [job](./job/job)
-  - [ ] [CronJob](./job/CronJob)
+  - [x] [CronJob](./job/CronJob)
